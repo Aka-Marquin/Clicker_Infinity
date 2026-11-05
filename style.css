@@ -1,0 +1,77 @@
+/* CSS DO PROTOTIPO */
+
+:root {
+  --fundo: #f2f5ff;
+  --texto: #202944;
+  --azul: #5267d8;
+  --azul-claro: #e4e9ff;
+}
+* { box-sizing: border-box; }
+body {
+  min-height: 100vh; margin: 0; padding: 20px;
+  display: grid; place-items: center;
+  background-color: rgb(250, 116, 67); color: var(--texto);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.game {
+  width: min(100%, 520px); padding: 28px; text-align: center;
+  background: white; border-radius: 15%;
+  border: 2px solid orangered;
+  box-shadow: 0 12px 35px #26345b18;
+}
+
+header small { color: purple; font-weight: bolder; letter-spacing: .12em; }
+
+h1 { margin: 10px 0; font-size: clamp(1.6rem, 5vw, 2.2rem); }
+
+header p, .score span { color: purple; }
+
+.score { display: flex; flex-direction: column; gap: 4px; margin: 24px 0 12px; }
+
+#pontuacao { color: var(--azul); font-size: 2.7rem; }
+
+.mascote {
+  width: 190px; height: 190px; margin: 10px auto;
+  border: 5px solid var(--azul-claro); border-radius: 50%;
+  background: rgb(250, 116, 67); cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  transition: transform .12s, border-color .12s;
+}
+
+.mascote:hover { transform: scale(1.04); border-color: orange; }
+
+.mascote:active { transform: scale(.94); }
+
+.mascote-emoji { font-size: 5.5rem; line-height: 1.1; }
+
+.mascote b { margin-top: 8px; color: purple; font-size: .7rem; }
+
+.progresso { margin-top: 24px; text-align: left; }
+
+.progresso > div:first-child { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 8px; font-size: .85rem; }
+
+.barra { height: 12px; overflow: hidden; border-radius: 99px; background: var(--azul-claro); }
+
+#barra-progresso { width: 0; height: 100%; background: purple; transition: width .18s; }
+
+.descoberta { min-height: 115px; margin-top: 22px; padding: 16px; border-radius: 16px; background: #fff8e7; }
+
+.descoberta h2 { margin: 0 0 8px; font-size: 1rem; }
+
+.descoberta p { margin: 0; color: black; line-height: 1.5; }
+
+.reiniciar { margin-top: 18px; padding: 10px 16px; border: 0; border-radius: 10px; background: var(--azul-claro); cursor: pointer; font-weight: bold; }
+
+
+/* Efeito dos itens flutuantes */
+.ponto-flutuante {
+  position: fixed; z-index: 5; pointer-events: none;
+  font-size: 1.5rem; font-weight: bold;
+  animation: subir .8s ease-out forwards;
+}
+@keyframes subir {
+  from { opacity: 1; transform: translateY(0) scale(.8); }
+  to { opacity: 0; transform: translateY(-85px) scale(1.2); }
+}
+@media (max-width: 420px) { .game { padding: 22px 16px; } }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clicker do Real Trap</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="game">
+    <header>
+      <small>BRO! FAZ SOL</small>
+      <h1>Clicker Raffa</h1>
+    </header>
+
+    <section class="score">
+      <strong id="pontuacao">0</strong>
+    </section>
+
+    <button id="mascote" class="mascote" type="button">
+
+      <img src="./assets/lil_raffa-removebg-preview.png" width="250px">
+    </button>
+    <p>Cada clique vale <strong>+10</strong> pontos.</p>
+
+    <section class="progresso">
+      <div><span>Próxima descoberta</span><strong id="proximo-marco">100 pontos</strong></div>
+      <div class="barra"><div id="barra-progresso"></div></div>
+    </section>
+
+    <section class="descoberta" aria-live="polite">
+      <h2 id="titulo-descoberta">Desbloqueie os melhores versos do BC Raff</h2>
+      <p id="texto-descoberta">Continue clicando para desbloquear as melhores quotes</p>
+    </section>
+
+    <button id="reiniciar" class="reiniciar" type="button">Reiniciar pontuação</button>
+  </main>
+  <div id="efeitos" aria-hidden="true"></div>
+
+  <!-- <audio controls hidden loop autoplay preload="none" src="./audios/Bro.mp3"></audio> -->
+
+  <audio autoplay loop controls hidden preload="auto">
+  <source src="./audios/Bro.mp3" type="audio/mp3">
+    </audio>
+</body>
+</html>
