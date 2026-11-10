@@ -102,10 +102,15 @@ mascote.addEventListener("click", (evento) => {
 botaoReiniciar.addEventListener("click", () => {
   pontos = 0;
   indiceDescoberta = -1;
-  tituloDescoberta.textContent = "Sua primeira descoberta espera por você!";
-  textoDescoberta.textContent = "Continue clicando para desbloquear uma curiosidade.";
+  tituloDescoberta.textContent = "Desbloqueie os melhores versos do BC Raff";
+  textoDescoberta.textContent = "Continue clicando para desbloquear as melhores quotes";
   atualizarPontuacao();
 });
+
+
+//CRIAR FUNÇÃO QUE TOCA A MUSICA DPS DOS PRIMEIROS 100 PONTOS
+
+//CRIAR FUNÇÃOQ QUE TOCA FAIXAS QUE MENCIONAM AS QUOTES
 
 // ATUALIZAÇÂO AO CARREGAR AS PAGINAS
 atualizarPontuacao();
