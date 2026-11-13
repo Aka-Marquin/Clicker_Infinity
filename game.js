@@ -1,4 +1,4 @@
-// 1. TODOS ELEMENTOS HTML
+// TODOS ELEMENTOS HTML //
 const pontuacaoElemento = document.querySelector("#pontuacao");
 const mascote = document.querySelector("#mascote");
 const efeitos = document.querySelector("#efeitos");
@@ -8,11 +8,11 @@ const proximoMarco = document.querySelector("#proximo-marco");
 const barraProgresso = document.querySelector("#barra-progresso");
 const botaoReiniciar = document.querySelector("#reiniciar");
 
-// 2. Dados principais do jogo.
+// 1. Dados principais do jogo.
 let pontos = 0;
 const pontosPorClique = 21;
 
-// ARRAY DAS QUOTES
+// ARRAY DAS QUOTES //
 const descobertas = [
   {
     pontos: 21 * 10,
@@ -36,18 +36,18 @@ const descobertas = [
   }
 ];
 
-// INDICA QUAL ITEM JA FOI DSCOBERTO
+// INDICA QUAL ITEM JA FOI DSCOBERTO //
 let indiceDescoberta = -1;
 
 
-// FUNÇÂO QUE ATUALIZA O CONTADOR E  AS INFORMAÇÔES DA INTERFACE
+// FUNÇÂO QUE ATUALIZA O CONTADOR E  AS INFORMAÇÔES DA INTERFACE //
 function atualizarPontuacao() {
   pontuacaoElemento.textContent = pontos;
   atualizarProgresso();
   verificarDescobertas();
 }
 
-// CALCULA A PENDENCIA PARA A PROXIMA QUOTE
+// CALCULA A PENDENCIA PARA A PROXIMA QUOTE //
 function atualizarProgresso() {
   const proxima = descobertas[indiceDescoberta + 1];
 
@@ -66,7 +66,7 @@ function atualizarProgresso() {
   barraProgresso.style.width = `${porcentagem}%`;
 }
 
-// FUNÇÂO QUE DESBLOQUEIAS AS QUOTES 
+// FUNÇÂO QUE DESBLOQUEIAS AS QUOTES //
 function verificarDescobertas() {
   const proxima = descobertas[indiceDescoberta + 1];
 
@@ -77,28 +77,28 @@ function verificarDescobertas() {
   }
 }
 
-// ANIMAÇÂO DO CLICK/PONTUAÇÂO - DEIXAR MAIS FLUIDO ou sei la
+// ANIMAÇÂO DO CLICK/PONTUAÇÂO - DEIXAR MAIS FLUIDO ou sei la //
 function mostrarEfeito(evento) {
   const efeito = document.createElement("span");
   efeito.classList.add("ponto-flutuante");
-  efeito.textContent = "🕶️☀️";
+  efeito.textContent = "🕶️☀️🥤";
   efeito.style.left = `${evento.clientX}px`;
   efeito.style.top = `${evento.clientY}px`;
   efeitos.appendChild(efeito);
 
  
-  //APAGANDO OS ELEMENTOS DPS DA ANIMAÇÂO PARA NAO ACUMULAR SHADOW ITENS
+  //APAGANDO OS ELEMENTOS DPS DA ANIMAÇÂO PARA NAO ACUMULAR SHADOW ITENS //
   setTimeout(() => efeito.remove(), 800);
 }
 
-//CADA CLIQUE SOMA A PONTUAÇÂO E ATIVA A ANIMAÇÂO, em tese
+//CADA CLIQUE SOMA A PONTUAÇÂO E ATIVA A ANIMAÇÂO, em tese... //
 mascote.addEventListener("click", (evento) => {
   pontos += pontosPorClique;
   atualizarPontuacao();
   mostrarEfeito(evento);
 });
 
-// SERVE PARA REINICIAR A BARRA DE PONTOS
+// SERVE PARA REINICIAR A BARRA DE PONTOS //
 botaoReiniciar.addEventListener("click", () => {
   pontos = 0;
   indiceDescoberta = -1;
@@ -112,5 +112,5 @@ botaoReiniciar.addEventListener("click", () => {
 
 //CRIAR FUNÇÃOQ QUE TOCA FAIXAS QUE MENCIONAM AS QUOTES
 
-// ATUALIZAÇÂO AO CARREGAR AS PAGINAS
+// ATUALIZAÇÂO AO CARREGAR AS PAGINAS //
 atualizarPontuacao();

@@ -49,19 +49,48 @@ header p, .score span { color: purple; }
 
 .progresso { margin-top: 24px; text-align: left; }
 
-.progresso > div:first-child { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 8px; font-size: .85rem; }
+.progresso > div:first-child { 
+  display: flex; 
+  justify-content: space-between; 
+  gap: 10px; 
+  margin-bottom: 8px; 
+  font-size: 1rem; }
 
-.barra { height: 12px; overflow: hidden; border-radius: 99px; background: var(--azul-claro); }
+.barra { 
+  height: 12px; 
+  overflow: hidden; 
+  border-radius: 99px; 
+  background: var(--azul-claro); 
+}
 
-#barra-progresso { width: 0; height: 100%; background: purple; transition: width .18s; }
+#barra-progresso { 
+  width: 0;
+  height: 100%;
+  background: purple;
+  transition: width .18s;
+  }
 
-.descoberta { min-height: 115px; margin-top: 22px; padding: 16px; border-radius: 16px; background: #fff8e7; }
+.descoberta {
+  min-height: 115px; 
+  margin-top: 22px; 
+  padding: 16px; 
+  border-radius: 16px; 
+  background: #fff8e7;
+ }
 
 .descoberta h2 { margin: 0 0 8px; font-size: 1rem; }
 
 .descoberta p { margin: 0; color: black; line-height: 1.5; }
 
-.reiniciar { margin-top: 18px; padding: 10px 16px; border: 0; border-radius: 10px; background: var(--azul-claro); cursor: pointer; font-weight: bold; }
+.reiniciar {
+   margin-top: 18px; 
+   padding: 10px 16px; 
+   border: 0; 
+   border-radius: 10px; 
+   background: var(--azul-claro); 
+   cursor: pointer; 
+   font-weight: bold;
+   }
 
 
 /* Efeito dos itens flutuantes */
